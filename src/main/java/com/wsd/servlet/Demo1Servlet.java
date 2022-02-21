@@ -24,7 +24,12 @@ public class Demo1Servlet extends HttpServlet {
         //设置编码
         request.setCharacterEncoding("utf-8");
         String user = request.getParameter("user");
-        System.out.println("user = " + user.length());
+        System.out.println("文本框输入的字符串长度" + user.length());
+
+        //获取请求方式
+        String method = request.getMethod();
+        System.out.println("请求方式=" + method);
+
         if(user.length()==0){
             out.print("用户名不能为空!");
         }else{

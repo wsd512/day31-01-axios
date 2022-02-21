@@ -10,7 +10,13 @@
 用户名:<input type="text" id="user" name="user" placeholder="请输入用户名"/><span id="spanText"></span>
 <script type="text/javascript">
     document.getElementById("user").onblur = function () {
-        axios.get("Demo1Servlet?user="+this.value).then(function (resp) {
+        /*axios.get("Demo1Servlet?user="+this.value).then(function (resp) {
+            document.getElementById("spanText").innerText = resp.data;
+        })*/
+        /*axios.get("Demo1Servlet?user="+this.value).then(resp=>{
+            document.getElementById("spanText").innerText = resp.data;
+        })*/
+        axios.post("Demo1Servlet","user="+this.value).then(resp=>{
             document.getElementById("spanText").innerText = resp.data;
         })
     }
