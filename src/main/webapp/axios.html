@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX入门案例</title>
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+<body>
+<h1>AJAX入门案例</h1>
+用户名:<input type="text" id="user" name="user" placeholder="请输入用户名"/><span id="spanText"></span>
+<script type="text/javascript">
+    document.getElementById("user").onblur = function () {
+        axios.get("Demo1Servlet?user="+this.value).then(function (resp) {
+            document.getElementById("spanText").innerText = resp.data;
+        })
+    }
+</script>
+</body>
+</html>
